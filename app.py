@@ -13,7 +13,7 @@ def get_notes():
 @app.route('/notes', methods=['POST'])
 def create_note():
     if not request.json or 'title' not in request.json:
-        abort(400, description="Missing 'title' in JSON")
+        abort(400, description="Missing the 'title' in JSON")
     
     new_note = {
         'id': str(uuid.uuid4()),  # Unique ID
